@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>EMS</title>
+</head>
+<body>
+	<div class="card" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: white; color:red; border:1px solid black; text-align: center;">
+		<h1>ERROR</h1>
+		<span th:text="${error != null ? error: 'Something went wrong!! Please try again later'}" style="color: black;"></span>
+	</div>
+</body>
+</html>

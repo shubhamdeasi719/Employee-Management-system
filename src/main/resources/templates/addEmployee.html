@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>EMS</title>
+</head>
+<body>
+	<div class="card" style="max-width: 500px; margin: 0 auto; padding: 20px; border:1px solid; border-radius: 10px">
+	
+		<form th:action="@{/save-employee}" th:object="${employee}" th:method="post">
+		<h1>Add Employee details</h1>
+		
+		<label for="firstName">Enter first name: </label>
+		<input type="text" id="firstName" name="firstName" th:field="*{firstName}">
+		<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color:red;"></p>
+		<br></br>
+		
+		<label for="lastName">Enter last name: </label>
+		<input type="text" id="lastName" name="lastName" th:field="*{lastName}">
+		<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color:red;"></p>
+		<br></br>
+		
+		
+		<label for="department">Enter department name: </label>
+		<input type="text" id="department" name="department" th:field="*{department}">
+		<p th:if="${#fields.hasErrors('department')}" th:errors="*{department}" style="color:red;"></p>
+		<br></br>
+		
+		<label for="designation">Enter designation name: </label>
+		<input type="text" id="designation" name="designation" th:field="*{designation}">
+		<p th:if="${#fields.hasErrors('designation')}" th:errors="*{designation}" style="color:red;"></p>
+		<br></br>
+		
+		<label for="salary">Enter salary: </label>
+		<input type="number" id="salary" name="salary" th:field="*{salary}">
+		<p th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" style="color:red;"></p>
+		<br></br>	
+		
+		<input type="submit" value="Submit Form" style="cursor: pointer;">
+		<a th:href="@{/all-employee}">
+			<button type="button" style="cursor: pointer;">All Employee Data</button>
+		</a>
+		</form>
+	</div>
+</body>
+</html>
